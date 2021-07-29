@@ -1,0 +1,38 @@
+
+
+<head>
+        <meta charset="utf-8">
+        <title>{{.title}}</title>
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		</head>
+
+<body>
+<h2> Employee details </h2>
+<a href="/insertform" class="btn btn-info" role="button"  >Add Employee </a>
+	<table class="table table-striped">
+	 <thead>
+		<tr> 
+			<th> Id </th>
+			<th>Name </th>
+			<th> Age </th>
+			<th> Company </th>
+			<th> Location </th>
+			<th> Delete </th>
+		</tr>
+		 <thead>
+		   <tbody>
+		{{range .details}}
+		<tr id={{.Id}}>
+			<td> {{.Id}} </td>
+			<td> {{.Name}}</td>
+			<td> {{.Age}} </td>
+			<td> {{.Company}} </td>
+			<td> {{.Location}} </td>
+			<td> <a href="/deleteemployee?id={{.Id}}" class="btn btn-info" role="button" type="submit" >Delete Employee </a></td>
+		</tr>
+		<tbody>
+		{{end}}
+	</table>
+</body>
+
